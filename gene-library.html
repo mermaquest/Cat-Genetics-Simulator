@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Cat Gene Library | Cat Genetics Simulator</title>
+    <meta name="title" content="Cat Gene Library | Cat Genetics Simulator" />
+    <meta
+      name="description"
+      content="Explore detailed information about cat genetics, coat colors, and health-related genes in our comprehensive gene library."
+    />
+    <meta
+      name="keywords"
+      content="cat genetics, cat genes, feline inheritance, cat breeding genetics, cat coat color genetics, cat health genetics, feline hereditary traits"
+    />
+    <meta name="author" content="Cat Genetics Simulator" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cat Gene Library | Cat Genetics Simulator" />
+    <meta
+      property="og:description"
+      content="Explore detailed information about cat genetics, coat colors, and health-related genes in our comprehensive gene library."
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Cat Gene Library | Cat Genetics Simulator" />
+    <meta
+      property="twitter:description"
+      content="Explore detailed information about cat genetics, coat colors, and health-related genes in our comprehensive gene library."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="./favicon.svg" />
+    <link rel="icon" type="image/svg" href="./favicon.svg" />
+    <link rel="icon" type="image/svg" href="./favicon.svg" />
+    <meta name="theme-color" content="#6a5acd" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="gene-library.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><i class="fas fa-paw"></i> Cat Genetics Simulator</h1>
+        <p>Explore our comprehensive gene library</p>
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Simulator</a></li>
+            <li><a href="learn-genetics.html">Genetics</a></li>
+            <li><a href="learn-breeds.html">Breeds</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="gene-library-section animated-element">
+        <div class="card">
+          <h2>Cat Genetics Library</h2>
+          <p class="library-intro">
+            Explore our comprehensive library of cat genetic traits. Click on each gene to learn more about how it affects your cat's appearance and health.
+          </p>
+
+          <!-- Category: Coat Color Genes -->
+          <div class="gene-category">
+            <h3><i class="fas fa-palette"></i> Coat Color Genes</h3>
+            
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Agouti Gene (A)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">A = Agouti (dominant)</span>
+                  <span class="allele recessive">a = Non-agouti (recessive)</span>
+                </div>
+                <p>The Agouti gene determines whether a cat's coat will have banded hairs (agouti pattern) or be solid in color. The A allele produces banded hairs, leading to tabby patterns (mackerel, classic, or ticked), while the a allele leads to a solid color, without the banding.</p>
+                <ul class="gene-outcomes">
+                  <li><strong>AA or Aa:</strong> Tabby pattern (agouti).</li>
+                  <li><strong>aa:</strong> Solid-colored coat (no banding).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">White Spotting Gene (S)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele incomplete-dominant">S = White spotting (Incomplete dominance)</span>
+                  <span class="allele incomplete-recessive">s = No white spotting (Incomplete recessive)</span>
+                </div>
+                <p>The White Spotting gene causes some cats to have white patches or areas, typically on the chest, paws, belly, and face. This gene is responsible for the bicolor or tuxedo pattern where the cat has a mix of colored fur and white patches. White spotting (ws) patterns are extremely variable. A cat with a single copy of ws can have a small or a large amount of white. Anecdotally, cats with 2 copies of ws tend to have more white, and may even be solid white. Selective breeding can fix the amount of white because other genes, known as polygenes, can influence colour distribution e.g. some breeds have been fixed for gloves or mitts.</p>
+                <ul class="gene-outcomes">
+                  <li><strong>SS:</strong> High to medium grade white spotting.</li>
+                  <li><strong>Ss:</strong> Medium to low grade white spotting (tuxedo).</li>
+                  <li><strong>ss:</strong> No white spots, solid color.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Silver/Inhibitor Gene (I)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">I = Silver (dominant)</span>
+                  <span class="allele recessive">i = Non-silver (recessive)</span>
+                </div>
+                <p>The Silver gene causes the tips of the hairs to be white or silver, creating a shimmering effect in the coat. This gene is common in breeds like the Chinchilla Persian and British Shorthair.</p>
+                <ul class="gene-outcomes">
+                  <li><strong>II or Ii:</strong> Silver sheen.</li>
+                  <li><strong>ii:</strong> Solid color (no silver effect).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Eumelanin Gene (B/b/c)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">B = Black (dominant)</span>
+                  <span class="allele recessive">b = Brown (recessive)</span>
+                  <span class="allele recessive">c = Cinnamon (recessive)</span>
+                </div>
+                <p>For this gene, there are actually 3 different alleles to pick from. Black (B), brown(b), and cinnamon(c).</p>
+                <ul class="gene-outcomes">
+                  <li><strong>BB OR Bb OR Bc:</strong> Black coat.</li>
+                  <li><strong>bb OR bc:</strong> Chocolate (brown) coat.</li>
+                  <li><strong>cc:</strong> Cinnamon coat.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Red (Orange) Gene (O)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele x-linked">O = Red (X-linked)</span>
+                </div>
+                <p>Red is a different gene to black chocolate and cinnamon. It is a sex-linked gene. A female must inherit 2 copies of the red gene in order to show up as red while the males only need one. This is why red male cats are so much more common than females.</p>
+                <h4>Red Females</h4>
+                <ul class="gene-outcomes">
+                  <li><strong>If a female inherits red + red:</strong> She will be red (ginger).</li>
+                  <li><strong>If she inherits 1 red gene:</strong> She will be tortoiseshell (red/black, red/chocolate or red/cinnamon depending on the other genes present).</li>
+                  <li><strong>If she inherits red + red AND the dilution gene:</strong> She will be cream.</li>
+                  <li><strong>If she inherits 1 red gene AND dilution gene:</strong> She will be dilute tortoiseshell (blue/cream, lilac/cream or fawn/cream).</li>
+                  <li><strong>If she inherits red + red AND the dilution AND the caramelizing gene:</strong> She will be apricot.</li>
+                  <li><strong>If she inherits 1 red gene AND dilution gene AND the caramelizing gene:</strong> She will be dilute tortoiseshell in the caramelized range of colors (though this may not show up very well and may be impossible to identify).</li>
+                </ul>
+                <h4>Red Males</h4>
+                <ul class="gene-outcomes">
+                  <li><strong>If a male inherits 1 red gene:</strong> He will be red as it is dominant in males.</li>
+                  <li><strong>If he inherits 1 red gene AND dilution gene:</strong> He will be cream.</li>
+                  <li><strong>If he inherits 1 red gene AND dilution gene AND caramelizing gene:</strong> He will be apricot.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Tortoiseshell Pattern</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele x-linked">X-linked pattern</span>
+                </div>
+                <p>The tortoiseshell pattern is primarily found in females, resulting from a combination of orange (O) and black (B) pigments. Female cats with two X chromosomes will have a mottled or blended appearance of orange and black.</p>
+                <ul class="gene-outcomes">
+                  <li><strong>Female cats with XO/XB:</strong> Will exhibit the tortoiseshell pattern.</li>
+                  <li><strong>Male cats:</strong> Typically cannot have a tortoiseshell pattern due to their single X chromosome.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Dilution Gene (D)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">D = Full color (dominant)</span>
+                  <span class="allele recessive">d = Diluted color (recessive)</span>
+                </div>
+                <p>The Dilution gene lightens the fur color. For example, a black cat with Dd or DD will have a rich black coat, while a cat with dd will have a blue-gray (diluted black) coat.</p>
+                <ul class="gene-outcomes">
+                  <li><strong>DD or Dd:</strong> Full-color coat.</li>
+                  <li><strong>dd:</strong> Diluted coat (e.g., blue-gray instead of black).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Maltese Dilution Gene (DD)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">DD = Full color (dominant)</span>
+                  <span class="allele recessive">dd = Diluted color (recessive)</span>
+                </div>
+                <p>The Maltese dilution gene lightens the fur color after it has already been diluted once by the dilution gene. For example, a black cat with DDdd or DDDD will have a blue gray (diluted black) coat, while a cat with dddd will have a caramel (maltese diluted black) coat.</p>
+                <ul class="gene-outcomes">
+                  <li><strong>DDDD or DDdd:</strong> Full-color coat.</li>
+                  <li><strong>dddd:</strong> Diluted coat (e.g., caramel instead of blue-gray).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Siamese Pattern (S)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">s = Not Siamese (dominant)</span>
+                  <span class="allele recessive">S = Siamese pattern (recessive)</span>
+                </div>
+                <p>The Siamese gene is a temperature-sensitive mutation in the enzyme responsible for producing pigment (tyrosinase). It causes the extremities (ears, tail, paws) to be darker because the enzyme is inactive at higher temperatures. It is a recessive semi albino trait.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Category: Health-Related Genes -->
+          <div class="gene-category">
+            <h3><i class="fas fa-heartbeat"></i> Health-Related Genes</h3>
+            
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Hypertrophic Cardiomyopathy (HCM)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-dominant">Autosomal dominant</span>
+                </div>
+                <p>HCM is a common genetic condition in Maine Coons, which causes the thickening of the heart muscle. The genetic mutation is linked to a specific myosin-binding protein C gene. Understanding this gene and its variants is key if you're looking at heart health risks in certain breeds.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Polycystic Kidney Disease (PKD)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-dominant">Autosomal dominant</span>
+                </div>
+                <p>PKD is a hereditary condition in cats, especially Persians, that causes fluid-filled cysts to develop in the kidneys, potentially leading to kidney failure. The PKD1 gene (located on chromosome 2) is responsible for the development of this disease. Cats with PKD1 mutations are more likely to develop PKD.</p>
+                <p>In the fancy cat breeds, PKD1 is inherited as an autosomal dominant condition. This implies that only one copy of the altered version of the gene is required to produce PKD1. Generally, 50% of PKD1 positive cats' offspring will inherit PKD1.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Brachycephalic Gene</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-dominant">Autosomal dominant</span>
+                </div>
+                <p>Brachycephalic breeds (e.g., Persians, Exotic Shorthair) have a genetic mutation that causes a shortened skull, leading to potential respiratory issues (like brachycephalic airway syndrome). The mutation affects the bone structure of the skull and can cause breathing difficulties due to a narrow nasal passage or elongated soft palate.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Progressive Retinal Atrophy (PRA)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-recessive">Autosomal recessive</span>
+                </div>
+                <p>PRA is a hereditary eye disease that causes the progressive degeneration of the retina, leading to blindness. Specific genetic mutations in the PDE6B gene are linked to PRA, and this mutation is most commonly found in Abyssinians, Siamese, and Persians.</p>
+                <p>The disease is inherited in an autosomal recessive fashion with both sexes being equally affected.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Polydactyly (Extra Toes)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-dominant">Autosomal dominant</span>
+                </div>
+                <p>Polydactylism is a genetic trait where a cat has extra toes (more than the typical five on each front paw). The Polydactyl gene is typically a dominant trait, so cats with one copy of the gene (e.g., Pp) can exhibit polydactylism.</p>
+                <p>Polydactyly is inherited as an autosomal dominant gene defect, sometimes with variable gene penetration. Recent work has shown that the defect is generally the same in cats as in humans.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category: Obesity-Related Genes -->
+          <div class="gene-category">
+            <h3><i class="fas fa-weight"></i> Obesity-Related Genes</h3>
+            
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Leptin Receptor (LEPR) Gene</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-recessive">Autosomal recessive</span>
+                </div>
+                <p>The LEPR gene encodes a receptor involved in regulating appetite and fat storage. Mutations in the LEPR gene have been linked to obesity in some animals, including cats. Cats with certain mutations in this gene may be more prone to gaining weight, especially if they are overfed or lack exercise.</p>
+                <p>LEPR mutations are inherited in an autosomal–recessive pattern.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">FTO Gene (Fat Mass and Obesity-associated)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">Dominant</span>
+                </div>
+                <p>The FTO gene is involved in regulating fat storage. Studies have found that mutations in the FTO gene are linked to an increased risk of obesity in several animal species, including cats.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category: Coat Texture and Special Features -->
+          <div class="gene-category">
+            <h3><i class="fas fa-feather-alt"></i> Coat Texture and Special Features</h3>
+            
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Curly Coat (Rex Gene) (R)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele recessive">Recessive</span>
+                </div>
+                <p>Rex gene mutations cause a curly coat, as seen in breeds like the Cornish Rex and Devon Rex. The rex gene is an example of a mutation that changes the structure of the hair follicle, making the fur curly instead of straight.</p>
+                <p>The rex gene is recessive. A cat would need to inherit RR to express this gene. All of its offspring will carry it.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Hairless Cats (Sphynx or Don Sphynx) (DS or S)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">Don Sphynx: Dominant</span>
+                  <span class="allele recessive">Sphynx: Recessive</span>
+                </div>
+                <p>The gene mutation causes hairlessness in cats like the Sphynx. These cats have a recessive gene that prevents the growth of hair, leading to their distinct smooth skin.</p>
+                <p>The Don Sphynx hairlessness gene is dominant while that of the Sphynx is recessive.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Taillessness (Manx Gene) (M)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele dominant">Dominant with lethal homozygous effect</span>
+                </div>
+                <p>The Manx gene is responsible for the taillessness (or short tails) in Manx cats. This gene is a dominant trait and also affects other skeletal structures. Manx cats can have severe spinal defects, including spina bifida.</p>
+                <p>All Manx cats are heterozygous for the Manx gene (i.e. Mm), which means they have one mutant M gene and one normal m gene each inherited from a parent. Being homozygous for the manx gene is usually lethal in utero, resulting in miscarriage.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category: Eye Color Genes -->
+          <div class="gene-category">
+            <h3><i class="fas fa-eye"></i> Eye Color Genes</h3>
+            
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Ocular Albinism (B)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <div class="gene-alleles">
+                  <span class="allele autosomal-recessive">Autosomal recessive</span>
+                </div>
+                <p>Ocular albinism is a condition linked to the X chromosome, where cats inherit a genetic mutation that affects the production of pigment in the eye, leading to blue eyes. This is common in breeds like the Siamese and Burmese.</p>
+                <p>Ocular albinism is autosomal recessive.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">The Orange (O) Gene and Eye Color</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <p>O is also associated with eye color in some cases. Cats with the orange or red coat colors (like a classic tabby or red Persian) often have amber eyes.</p>
+                <p>While the O gene primarily controls coat color (orange), there's a correlation between red or orange cats and amber or yellow eyes, making it an important gene to understand in relation to eye color.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">The Inhibitor (I) Gene</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <p>The I gene is responsible for the degree of intensity in the eye color. It can influence the brightness and depth of color. For example, in cats with an amber eye color, the I gene can make the eyes appear more golden and bright.</p>
+                <p>I gene also plays a role in restricting certain eye color variations. For instance, in the case of blue-eyed cats, the I gene can inhibit pigment production in the iris, allowing the eyes to appear more vividly blue.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Genetics of Amber and Green Eyes</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <p><strong>Amber eyes:</strong> A common eye color seen in breeds like Persians, British Shorthairs, and some Maine Coons, is caused by the genetic combination of pigmentation and the ability to reflect light. It's largely influenced by the I gene and the type of coat color a cat has (whether it's more yellow or orange).</p>
+                <p><strong>Green eyes:</strong> This eye color is seen in many cats, and while it's not fully understood, it is often linked to coat color and breed. Green-eyed cats often have the dominant genes for certain fur colors (such as silver tabbies or tortoiseshells). It's thought that the agouti gene (which controls the distribution of color) might have an influence on green eyes as well.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">The P (Piebald) Gene and Eye Color</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <p>The Piebald gene influences the distribution of white and colored fur on cats, but it also plays a role in the development of eye color. In cats with piebaldism (which results in a coat with random white patches), the eye color may be more likely to be green or yellow.</p>
+                <p>However, this gene interacts with others like the B gene (black vs. non-black), and cats with white patches may have heterochromia (two eyes of different colors).</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Heterochromia (Different Color Eyes)</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <p>Heterochromia is a rare genetic condition where a cat has two eyes of different colors (e.g., one blue and one amber, or one yellow and one green).</p>
+                <p>Heterochromia is most commonly seen in breeds like Turkish Van, Siberian, and Japanese Bobtail.</p>
+                <p>It's typically linked to either a dominant allele for white spotting that causes an abnormal distribution of pigment in one eye. The gene responsible for heterochromia is not fully mapped, but it may involve variations in the O and I genes.</p>
+              </div>
+            </div>
+
+            <div class="gene-accordion">
+              <button class="gene-button">
+                <span class="gene-name">Breed-Specific Eye Color Variations</span>
+                <span class="gene-button-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="gene-content">
+                <p>Some breeds have specific genetic traits that result in unique eye colors. For example:</p>
+                <ul>
+                  <li><strong>Siamese:</strong> Typically have blue eyes due to the temperature-sensitive colorpoint gene. Blue eyes are often the default color for kittens born to cats with a colorpoint pattern (e.g., Siamese cats). However, the gene for colorpoint patterns (which affects fur color) also results in blue eyes in many cases.</li>
+                  <li><strong>Persian:</strong> Known for having golden or copper-colored eyes, although they can sometimes have green or blue, depending on the coat color.</li>
+                    <li><strong>Russian Blue:</strong> Characteristically have green eyes.</li>
+                    <li><strong>Burmese:</strong> Often have golden eyes, especially in darker-colored cats.</li>
+                    <li><strong>Turkish Angora:</strong> May have amber, green, or heterochromic eyes (two different colors).</li>
+                    <li><strong>Turkish Van:</strong> Known for their characteristic amber or blue eyes, and sometimes heterochromia.</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <div class="back-to-genetics">
+                <a href="learn-genetics.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Genetics
+                </a>
+            </div>
+            </div>
+        </section>
+        </main>
+
+        <footer>
+        <div class="container">
+            <p>Cat Genetics Simulator &copy; 2025</p>
+            <div class="footer-links">
+            <a href="index.html">Simulator</a>
+            <a href="learn-genetics.html">Genetics</a>
+            <a href="learn-breeds.html">Breeds</a>
+            <a href="about.html">About</a>
+            </div>
+        </div>
+        </footer>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all accordion buttons
+            const accordionButtons = document.querySelectorAll('.gene-button');
+            
+            // Add click event to each button
+            accordionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Toggle active class on the clicked button
+                this.classList.toggle('active');
+                
+                // Get the content element
+                const content = this.nextElementSibling;
+                
+                // Toggle the visibility of the content
+                if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                this.querySelector('.gene-button-icon i').className = 'fas fa-chevron-down';
+                } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                this.querySelector('.gene-button-icon i').className = 'fas fa-chevron-up';
+                }
+            });
+            });
+        });
+        </script>
+    </body>
+    </html>
