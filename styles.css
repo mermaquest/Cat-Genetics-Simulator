@@ -1,4 +1,4 @@
-/* Base Styles */
+
 :root {
   --primary-color: #6a5acd;
   --primary-light: #9c91e6;
@@ -17,8 +17,7 @@
   --border-radius: 8px;
   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
-  
-  /* Font families */
+
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Open Sans', sans-serif;
 }
@@ -57,7 +56,6 @@ main {
   padding: 30px 0;
 }
 
-/* Header */
 header {
   background-color: var(--primary-color);
   color: white;
@@ -81,7 +79,6 @@ header p {
   font-weight: 400;
 }
 
-/* Card Styles */
 .card {
   background-color: var(--card-color);
   border-radius: var(--border-radius);
@@ -114,7 +111,7 @@ header p {
   background-color: var(--accent-color);
 }
 
-/* Step Sections */
+
 .step-section,
 .intro-section {
   display: none;
@@ -138,7 +135,7 @@ header p {
   }
 }
 
-/* Progress Bar */
+
 .progress-bar-container {
   margin: 20px 0;
 }
@@ -166,7 +163,7 @@ header p {
   font-family: var(--body-font);
 }
 
-/* Form Elements */
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -203,7 +200,7 @@ select.form-control {
   padding-right: 40px;
 }
 
-/* Toggle Switch */
+
 .toggle-container {
   display: flex;
   align-items: center;
@@ -259,7 +256,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Buttons */
+
 .action-section {
   display: flex;
   justify-content: space-between;
@@ -305,7 +302,7 @@ input:checked + .slider:before {
   border-color: #545b62;
 }
 
-/* Gene Info Box */
+
 .gene-info-box,
 .breed-info-box {
   background-color: #f8f8ff;
@@ -1493,4 +1490,131 @@ label {
   .gene-button {
     padding: 15px;
   }
+}
+
+/* Responsive Navigation Improvements */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .main-nav li {
+    width: calc(50% - 10px); /* Two tabs per row on smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  .main-nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 5px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav li {
+    width: 100%; /* Full width on very small screens */
+  }
+  
+  .main-nav a {
+    font-size: 0.95rem;
+    padding: 12px 5px;
+  }
+  
+  /* Smaller header for mobile */
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  header p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    padding: 12px 15px;
+    text-align: center;
+    margin-bottom: -1px; /* Fix border overlap issues */
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+  
+  .tab-btn.active {
+    background-color: rgba(106, 90, 205, 0.1);
+  }
+}
+@media (max-width: 480px) {
+  .tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+  
+  .tab-btn {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .tab-btn.active {
+    border-color: var(--primary-color);
+  }
+  
+  .tab-btn.active::after {
+    display: none; /* Remove the bottom border indicator */
+  }
+  
+  /* Adjust spacing in result sections */
+  .result-item {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .result-row {
+    padding: 8px 0;
+  }
+}
+/* Add these styles to your styles.css file for better dropdown styling */
+
+/* Enhanced select dropdown styles */
+select.form-control {
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+/* Style for option groups */
+select.form-control option {
+  padding: 8px 10px;
+  line-height: 1.4;
+}
+
+/* Improve readability of dropdowns on mobile */
+@media (max-width: 768px) {
+  select.form-control {
+    font-size: 0.95rem;
+    padding: 12px 40px 12px 12px; /* Increased right padding for the dropdown arrow */
+    background-position: right 12px center; /* Position the dropdown arrow */
+  }
+  
+  /* Adjust the appearance of options in the dropdown */
+  select.form-control option {
+    padding: 10px;
+  }
+}
+
+/* Make long option text wrap better in modals for better mobile experience */
+.modal-content select.form-control {
+  word-break: normal;
+  white-space: normal;
+  height: auto;
 }

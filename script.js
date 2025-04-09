@@ -1,6 +1,4 @@
-// Define the gene descriptions
-// Updated gene descriptions - Replace the existing descriptions object in script.js
-// Descriptions for users who KNOW genotypes (direct genotype input)
+
 const genotypeDescriptions = {
   'Agouti':
     "The Agouti gene determines whether a cat's coat will have banded hairs (agouti pattern) or be solid in color. Dominant (A) leads to tabby patterns, while recessive (a) leads to a solid color. Select AA for homozygous dominant, Aa for heterozygous, or aa for homozygous recessive.",
@@ -35,7 +33,6 @@ const genotypeDescriptions = {
   'Polydactyly':
     'Polydactyly is a condition where a cat has extra toes. Select PP for homozygous polydactyl, Pp for heterozygous polydactyl, or pp for normal toe count.',
 };
-// Descriptions for users who DON'T KNOW genotypes (visual trait selection)
 const traitDescriptions = {
   'Agouti':
     "The Agouti gene determines whether a cat has tabby pattern or solid color. Selecting 'tabby' means your cat has the agouti gene (A), which allows banded fur and tabby patterning. Selecting 'solid' means your cat lacks the agouti gene (a) and has a solid-colored coat without banding.",
@@ -71,7 +68,6 @@ const traitDescriptions = {
     "Polydactyly is the presence of extra toes. Selecting 'extra toes' means your cat has more than the usual number of toes (typically more than 5 on front paws or 4 on back paws). Selecting 'normal toes' means your cat has the standard number of toes.",
 };
   
-  // Define breed-specific health conditions
   const breedGenes = {
     'Abyssinian': ['PRA'],
     'Balinese': ['PRA'],
@@ -88,7 +84,6 @@ const traitDescriptions = {
     'None': [],
   };
   
-  // Define coat color genes and health genes
   const coatColorGenes = [
     'Agouti',
     'White Spotting',
@@ -109,48 +104,167 @@ const traitDescriptions = {
     'Progressive Retinal Atrophy (PRA)',
     'Polydactyly',
   ];
-  // Define trait options for each gene
   const traitOptions = {
-    'Agouti': ['tabby', 'solid'],
-    'White Spotting': ['high to medium white spots', 'medium to low white spots', 'no white spots'],
-    'Silver': ['silver', 'non-silver'],
-    'Eumelanin': ['black', 'brown', 'cinnamon', 'red'],
-    'Red': ['red', 'tortoiseshell', 'eumelanin controlled'],
-    'Dilution': ['diluted', 'full color'],
-    'Maltese Dilution': ['caramel', 'diluted'],
-    'Siamese': ['siamese', 'non-siamese'],
-    'Curly Coat (Rex Gene)': ['curly', 'straight'],
-    'Hairless Cats (Sphynx or Don Sphynx)': ['hairless', 'coated'],
-    'Taillessness (Manx Gene)': ['tailless', 'tail'],
-    'Hypertrophic Cardiomyopathy (HCM)': ['affected', 'not affected'],
-    'Polycystic Kidney Disease (PKD)': ['affected', 'not affected'],
-    'Brachycephalic Gene': ['brachycephalic', 'normal head'],
-    'Progressive Retinal Atrophy (PRA)': ['affected', 'not affected'],
-    'Polydactyly': ['extra toes', 'normal toes'],
+    'Agouti': [
+      'tabby: Banded hairs with pattern (AA or Aa)',
+      'solid: Solid color without banding (aa)'
+    ],
+    'White Spotting': [
+      'high to medium white spots: Significant white areas (SS)',
+      'medium to low white spots: Limited white patches (Ss)',
+      'no white spots: Solid colored coat (ss)'
+    ],
+    'Silver': [
+      'silver: Silver/white hair tips (II or Ii)',
+      'non-silver: Normal pigmented coat (ii)'
+    ],
+    'Eumelanin': [
+      'black: Black base color (BB, Bb, Bc)',
+      'brown: Chocolate/brown base color (bb, bc)',
+      'cinnamon: Warm brown/cinnamon color (cc)',
+      'red: Red pigment masking base color'
+    ],
+    'Red': [
+      'red: Orange/ginger color (XOY male or XOXO female)',
+      'tortoiseshell: Mix of red and base color (XOXB female only)',
+      'eumelanin controlled: Base color determined by Eumelanin gene (XBY male or XBXB female)'
+    ],
+    'Dilution': [
+      'diluted: Lighter version of base color (dd)',
+      'full color: Rich, intense color (DD or Dd)'
+    ],
+    'Maltese Dilution': [
+      'caramel: Warm caramelized tones (dd)',
+      'diluted: Standard diluted color (DD or Dd)'
+    ],
+    'Siamese': [
+      'siamese: Darker points on extremities (ss)',
+      'non-siamese: Even coloration (SS or Ss)'
+    ],
+    'Curly Coat (Rex Gene)': [
+      'curly: Wavy or curly fur (rr)',
+      'straight: Normal straight coat (RR or Rr)'
+    ],
+    'Hairless Cats (Sphynx or Don Sphynx)': [
+      'hairless: Little or no fur (SS, Ss, or ss for Sphynx)',
+      'coated: Normal fur development (ss for Don Sphynx)'
+    ],
+    'Taillessness (Manx Gene)': [
+      'tailless: No tail or shortened tail (Mm)',
+      'tail: Normal-length tail (mm)'
+    ],
+    'Hypertrophic Cardiomyopathy (HCM)': [
+      'affected: At risk for heart condition (HH or Hh)',
+      'not affected: Low risk for heart condition (hh)'
+    ],
+    'Polycystic Kidney Disease (PKD)': [
+      'affected: At risk for kidney condition (KK or Kk)',
+      'not affected: Low risk for kidney condition (kk)'
+    ],
+    'Brachycephalic Gene': [
+      'brachycephalic: Flat face, shortened muzzle (BB or Bb)',
+      'normal head: Regular feline face shape (bb)'
+    ],
+    'Progressive Retinal Atrophy (PRA)': [
+      'affected: At risk for vision loss (pp)',
+      'not affected: Normal vision (PP or Pp)'
+    ],
+    'Polydactyly': [
+      'extra toes: More than standard number (PP or Pp)',
+      'normal toes: Standard number of toes (pp)'
+    ],
   };
   
-  // Genotype options for direct input
   const genotypeOptions = {
-    'Agouti': ['AA', 'Aa', 'aa'],
-    'White Spotting': ['SS', 'Ss', 'ss'],
-    'Silver': ['II', 'Ii', 'ii'],
-    'Eumelanin': ['BB', 'Bb', 'Bc', 'bb', 'bc', 'cc'],
-    'Red Male': ['XOY', 'XBY'],
-    'Red Female': ['XOXO', 'XOXB', 'XBXB'],
-    'Dilution': ['DD', 'Dd', 'dd'],
-    'Maltese Dilution': ['DD', 'Dd', 'dd'],
-    'Siamese': ['SS', 'Ss', 'ss'],
-    'Curly Coat (Rex Gene)': ['rr', 'Rr', 'RR'],
-    'Hairless Cats (Sphynx or Don Sphynx)': ['SS', 'Ss', 'ss'],
-    'Taillessness (Manx Gene)': ['MM', 'Mm', 'mm'],
-    'Hypertrophic Cardiomyopathy (HCM)': ['HH', 'Hh', 'hh'],
-    'Polycystic Kidney Disease (PKD)': ['KK', 'Kk', 'kk'],
-    'Brachycephalic Gene': ['BB', 'Bb', 'bb'],
-    'Progressive Retinal Atrophy (PRA)': ['PP', 'Pp', 'pp'],
-    'Polydactyly': ['PP', 'Pp', 'pp'],
+    'Agouti': [
+      'AA: Tabby pattern (homozygous dominant)',
+      'Aa: Tabby pattern (heterozygous)',
+      'aa: Solid color (homozygous recessive)'
+    ],
+    'White Spotting': [
+      'SS: High white spotting',
+      'Ss: Medium white spotting',
+      'ss: No white spotting'
+    ],
+    'Silver': [
+      'II: Silver coat (homozygous dominant)',
+      'Ii: Silver coat (heterozygous)',
+      'ii: Non-silver coat (homozygous recessive)'
+    ],
+    'Eumelanin': [
+      'BB: Black coat (homozygous black)',
+      'Bb: Black coat (heterozygous black/brown)',
+      'Bc: Black coat (heterozygous black/cinnamon)',
+      'bb: Chocolate coat (homozygous brown)',
+      'bc: Chocolate coat (heterozygous brown/cinnamon)',
+      'cc: Cinnamon coat (homozygous cinnamon)'
+    ],
+    'Red Male': [
+      'XOY: Red (orange) coat',
+      'XBY: Non-red coat (base color)'
+    ],
+    'Red Female': [
+      'XOXO: Red (orange) coat',
+      'XOXB: Tortoiseshell pattern',
+      'XBXB: Non-red coat (base color)'
+    ],
+    'Dilution': [
+      'DD: Full color (homozygous dominant)',
+      'Dd: Full color (heterozygous)',
+      'dd: Diluted color (blue, lilac, fawn)'
+    ],
+    'Maltese Dilution': [
+      'DD: Standard diluted color',
+      'Dd: Standard diluted color',
+      'dd: Caramelized color'
+    ],
+    'Siamese': [
+      'SS: Non-pointed coat (homozygous dominant)',
+      'Ss: Non-pointed coat (heterozygous)',
+      'ss: Siamese pattern (point coloration)'
+    ],
+    'Curly Coat (Rex Gene)': [
+      'rr: Curly coat',
+      'Rr: Straight coat (carrier)',
+      'RR: Straight coat (non-carrier)'
+    ],
+    'Hairless Cats (Sphynx or Don Sphynx)': [
+      'SS: Hairless (Don Sphynx)',
+      'Ss: Hairless (Don Sphynx)',
+      'ss: Coated (or hairless for Sphynx)'
+    ],
+    'Taillessness (Manx Gene)': [
+      'MM: Lethal in utero',
+      'Mm: Tailless or short tail',
+      'mm: Normal tail'
+    ],
+    'Hypertrophic Cardiomyopathy (HCM)': [
+      'HH: Affected (higher risk)',
+      'Hh: Affected (carrier)',
+      'hh: Not affected'
+    ],
+    'Polycystic Kidney Disease (PKD)': [
+      'KK: Affected (higher risk)',
+      'Kk: Affected (carrier)',
+      'kk: Not affected'
+    ],
+    'Brachycephalic Gene': [
+      'BB: Flat-faced (homozygous)',
+      'Bb: Flat-faced (heterozygous)',
+      'bb: Normal face shape'
+    ],
+    'Progressive Retinal Atrophy (PRA)': [
+      'PP: Normal vision (homozygous)',
+      'Pp: Normal vision (carrier)',
+      'pp: Affected (vision loss)'
+    ],
+    'Polydactyly': [
+      'PP: Extra toes (homozygous)',
+      'Pp: Extra toes (heterozygous)',
+      'pp: Normal toes'
+    ],
   };
   
-  // Store user selections
   const simulationData = {
     selectedBreed: 'None',
     knowGenotypes: false,
@@ -162,7 +276,6 @@ const traitDescriptions = {
     },
   };
   
-  // Function to handle section navigation
   function navigateToSection(currentSectionId, nextSectionId) {
     // Hide current section
     document.getElementById(currentSectionId).classList.remove('active');
@@ -172,15 +285,15 @@ const traitDescriptions = {
     window.scrollTo(0, 0);
   }
   
-  // Initialize the application
+
   document.addEventListener('DOMContentLoaded', function () {
-    // Show intro section on load
+
     document.getElementById('intro-section').classList.add('active');
   
-    // Initialize forms
+
     initializeForms();
   
-    // Add event listeners
+
     setupEventListeners();
   });
   
@@ -189,21 +302,18 @@ const traitDescriptions = {
     let activePopover = null;
     let activeInfoIcon = null;
   
-    // Add event listener for clicks on info icons
+
     document.addEventListener('click', function (event) {
       const target = event.target;
   
-      // Check if clicked element is an info icon
       if (target.classList.contains('info-icon')) {
         event.preventDefault();
   
         const geneName = target.dataset.gene;
         const description = descriptions[geneName];
-  
-        // Store the info icon element for repositioning on scroll
+
         activeInfoIcon = target;
   
-        // Create popover content
         popoverContainer.innerHTML = `
                   <div class="popover-arrow"></div>
                   <h4>${geneName}</h4>
@@ -351,7 +461,13 @@ const traitDescriptions = {
   
     geneList.forEach((gene) => {
       const geneId = createValidSelector(gene);
-      const options = traitOptions[gene].map((trait) => `<option value="${trait}">${trait}</option>`).join('');
+      
+      // Extract just the trait name for the value, but show the full text
+      const options = traitOptions[gene].map((option) => {
+        const parts = option.split(':');
+        const value = parts[0].trim(); // Use just the trait name as the value
+        return `<option value="${value}">${option}</option>`;
+      }).join('');
   
       const groupId = `${formId}-group-${geneId}`;
   
@@ -375,41 +491,47 @@ const traitDescriptions = {
   
   // Create genotype select fields
   function populateGenotypeForm(formId, geneList, gender = '') {
-    const form = document.getElementById(formId);
-    if (!form) return;
-  
-    geneList.forEach((gene) => {
-      const geneId = createValidSelector(gene);
-  
-      // Special handling for Red gene which has different options for males and females
-      let optionsArray;
-      if (gene === 'Red' && gender) {
-        optionsArray = genotypeOptions[`Red ${gender.charAt(0).toUpperCase() + gender.slice(1)}`];
-      } else {
-        optionsArray = genotypeOptions[gene] || [];
-      }
-  
-      const options = optionsArray.map((genotype) => `<option value="${genotype}">${genotype}</option>`).join('');
-  
-      const groupId = `${formId}-group-${geneId}`;
-  
-      const html = `
-              <div class="form-group" id="${groupId}">
-                  <label for="${formId.split('-')[0]}-genotype-${geneId}">
-                      <span>${gene}</span>
-                      <span class="info-icon" data-gene="${gene}">i</span>
-                  </label>
-                  <select class="form-control genotype-select" id="${
-                    formId.split('-')[0]
-                  }-genotype-${geneId}" data-gene="${gene}">
-                      ${options}
-                  </select>
-              </div>
-          `;
-  
-      form.insertAdjacentHTML('beforeend', html);
-    });
-  }
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  geneList.forEach((gene) => {
+    const geneId = createValidSelector(gene);
+
+    // Special handling for Red gene which has different options for males and females
+    let optionsArray;
+    if (gene === 'Red' && gender) {
+      optionsArray = genotypeOptions[`Red ${gender.charAt(0).toUpperCase() + gender.slice(1)}`];
+    } else {
+      optionsArray = genotypeOptions[gene] || [];
+    }
+
+    // Extract just the genotype code for the value, but show the full text
+    const options = optionsArray.map((option) => {
+      const parts = option.split(':');
+      const value = parts[0].trim(); // Use just the genotype code as the value
+      return `<option value="${value}">${option}</option>`;
+    }).join('');
+
+    const groupId = `${formId}-group-${geneId}`;
+
+    const html = `
+            <div class="form-group" id="${groupId}">
+                <label for="${formId.split('-')[0]}-genotype-${geneId}">
+                    <span>${gene}</span>
+                    <span class="info-icon" data-gene="${gene}">i</span>
+                </label>
+                <select class="form-control genotype-select" id="${
+                  formId.split('-')[0]
+                }-genotype-${geneId}" data-gene="${gene}">
+                    ${options}
+                </select>
+            </div>
+        `;
+
+    form.insertAdjacentHTML('beforeend', html);
+  });
+}
+
   
   // Toggle visibility of Maltese Dilution based on Dilution trait
   function toggleMalteseDilution(gender, show) {
@@ -1197,94 +1319,63 @@ function getVisualTraitDescription(gene, genotype) {
     coatResultsDiv.innerHTML = '<h3>Coat Color Predictions</h3>';
     healthResultsDiv.innerHTML = '<h3>Health Condition Predictions</h3>';
   
-    // Add parent information once, right at the beginning
-    addParentInfo(coatResultsDiv);
-  // Calculate coat color gene results
-  coatColorGenes.forEach((gene) => {
-    if (gene !== 'Red') {
+    // REMOVED: The call to addParentInfo(coatResultsDiv);
+    
+    // Calculate coat color gene results
+    coatColorGenes.forEach((gene) => {
+      if (gene !== 'Red') {
+        const offspring = punnettSquare(simulationData.maleGenotypes[gene], simulationData.femaleGenotypes[gene], gene);
+        const probabilities = calculateProbabilities(offspring);
+        coatResultsDiv.innerHTML += generateResultHTML(gene, probabilities);
+      }
+    });
+  
+    // Special handling for Red gene
+    const redOffspring = calculateRedGeneOffspring(
+      simulationData.maleGenotypes['Red'],
+      simulationData.femaleGenotypes['Red']
+    );
+  
+    // Use the function to generate Red gene HTML with descriptions
+    coatResultsDiv.innerHTML += updateRedGeneDisplay(coatResultsDiv, redOffspring);
+  
+    // Calculate health gene results
+    healthGenes.forEach((gene) => {
       const offspring = punnettSquare(simulationData.maleGenotypes[gene], simulationData.femaleGenotypes[gene], gene);
-      const probabilities = calculateProbabilities(offspring);
-      coatResultsDiv.innerHTML += generateResultHTML(gene, probabilities);
-    }
-  });
-
-  // Special handling for Red gene
-  const redOffspring = calculateRedGeneOffspring(
-    simulationData.maleGenotypes['Red'],
-    simulationData.femaleGenotypes['Red']
-  );
-
-  // Use the new function to generate Red gene HTML with descriptions
-  coatResultsDiv.innerHTML += updateRedGeneDisplay(coatResultsDiv, redOffspring);
-
-  // Calculate health gene results
-  healthGenes.forEach((gene) => {
-    const offspring = punnettSquare(simulationData.maleGenotypes[gene], simulationData.femaleGenotypes[gene], gene);
-
-    // Apply breed-specific modifications
-    const selectedBreed = simulationData.selectedBreed;
-    const modifiedOffspring = applyBreedSpecificMutations(gene, offspring, selectedBreed);
-
-    // Calculate and display probabilities
-    const probabilities = calculateProbabilities(modifiedOffspring);
-
-    // Add extra information for breed-specific conditions
-    let extraInfo = '';
-    if (selectedBreed !== 'None') {
-      if (
-        gene === 'Hypertrophic Cardiomyopathy (HCM)' &&
-        ['Maine Coon', 'Ragdoll', 'Siberian', 'Norwegian Forest Cat', 'RagaMuffin'].includes(selectedBreed)
-      ) {
-        extraInfo = `<p class="breed-alert">${selectedBreed} cats have increased risk of HCM.</p>`;
-      } else if (gene === 'Polycystic Kidney Disease (PKD)' && selectedBreed === 'Persian') {
-        extraInfo = `<p class="breed-alert">Persian cats have increased risk of PKD.</p>`;
-      } else if (
-        gene === 'Progressive Retinal Atrophy (PRA)' &&
-        ['Abyssinian', 'Siamese', 'Persian', 'Balinese', 'Colorpoint Shorthair', 'Oriental'].includes(selectedBreed)
-      ) {
-        extraInfo = `<p class="breed-alert">${selectedBreed} cats have increased risk of PRA.</p>`;
-      } else if (gene === 'Brachycephalic Gene' && ['Exotic', 'Persian'].includes(selectedBreed)) {
-        extraInfo = `<p class="breed-alert">${selectedBreed} cats are brachycephalic breeds.</p>`;
-      } else if (gene === 'Polydactyly' && selectedBreed === 'Maine Coon') {
-        extraInfo = `<p class="breed-alert">Maine Coon cats have increased incidence of polydactyly.</p>`;
-      }
-    }
-
-    healthResultsDiv.innerHTML += generateResultHTML(gene, probabilities, extraInfo);
-  });
   
-  // Add parent names if they exist
-  const maleName = simulationData.parentNames?.male;
-  const femaleName = simulationData.parentNames?.female;
+      // Apply breed-specific modifications
+      const selectedBreed = simulationData.selectedBreed;
+      const modifiedOffspring = applyBreedSpecificMutations(gene, offspring, selectedBreed);
   
-  if (coatResultsDiv && (maleName || femaleName)) {
-    // Check if parent info already exists to prevent duplicates
-    if (!coatResultsDiv.querySelector('.parent-info')) {
-      let parentInfo = '<div class="parent-info">';
-      parentInfo += '<h4>Parents</h4>';
-      
-      if (maleName) {
-        parentInfo += `<p><strong>Male parent:</strong> ${maleName}</p>`;
-      } else {
-        parentInfo += '<p><strong>Male parent:</strong> Unnamed</p>';
+      // Calculate and display probabilities
+      const probabilities = calculateProbabilities(modifiedOffspring);
+  
+      // Add extra information for breed-specific conditions
+      let extraInfo = '';
+      if (selectedBreed !== 'None') {
+        if (
+          gene === 'Hypertrophic Cardiomyopathy (HCM)' &&
+          ['Maine Coon', 'Ragdoll', 'Siberian', 'Norwegian Forest Cat', 'RagaMuffin'].includes(selectedBreed)
+        ) {
+          extraInfo = `<p class="breed-alert">${selectedBreed} cats have increased risk of HCM.</p>`;
+        } else if (gene === 'Polycystic Kidney Disease (PKD)' && selectedBreed === 'Persian') {
+          extraInfo = `<p class="breed-alert">Persian cats have increased risk of PKD.</p>`;
+        } else if (
+          gene === 'Progressive Retinal Atrophy (PRA)' &&
+          ['Abyssinian', 'Siamese', 'Persian', 'Balinese', 'Colorpoint Shorthair', 'Oriental'].includes(selectedBreed)
+        ) {
+          extraInfo = `<p class="breed-alert">${selectedBreed} cats have increased risk of PRA.</p>`;
+        } else if (gene === 'Brachycephalic Gene' && ['Exotic', 'Persian'].includes(selectedBreed)) {
+          extraInfo = `<p class="breed-alert">${selectedBreed} cats are brachycephalic breeds.</p>`;
+        } else if (gene === 'Polydactyly' && selectedBreed === 'Maine Coon') {
+          extraInfo = `<p class="breed-alert">Maine Coon cats have increased incidence of polydactyly.</p>`;
+        }
       }
-      
-      if (femaleName) {
-        parentInfo += `<p><strong>Female parent:</strong> ${femaleName}</p>`;
-      } else {
-        parentInfo += '<p><strong>Female parent:</strong> Unnamed</p>';
-      }
-      
-      parentInfo += '</div>';
-      
-      // Insert after the heading
-      const heading = coatResultsDiv.querySelector('h3');
-      if (heading) {
-        heading.insertAdjacentHTML('afterend', parentInfo);
-      }
-    }
+  
+      healthResultsDiv.innerHTML += generateResultHTML(gene, probabilities, extraInfo);
+    });
   }
-}
+  
   
   // Generate HTML for result display
   // Generate HTML for result display
@@ -1349,85 +1440,85 @@ function generateResultHTML(gene, probabilities, extraInfo = '') {
     return html || '<p>No data available</p>';
   }
   // Update the Red gene display to include visual trait descriptions
-function updateRedGeneDisplay(coatResultsDiv, redOffspring) {
-  const maleProbabilities = calculateProbabilities(redOffspring.maleOffspring);
-  const femaleProbabilities = calculateProbabilities(redOffspring.femaleOffspring);
-
-  // Display results
-  let redGeneHTML = `
-    <div class="result-item">
-      <h4>Red Gene</h4>
-      <p><strong>Male Offspring:</strong></p>
-  `;
-
-  // Male offspring results
-  if (Object.keys(maleProbabilities).length > 0) {
-    for (const genotype in maleProbabilities) {
-      const probability = maleProbabilities[genotype].toFixed(1);
-      const description = getVisualTraitDescription('Red', genotype);
-      
-      redGeneHTML += `
-        <div class="result-row">
-            <div class="result-genotype">${genotype}</div>
-            <div class="result-probability">
-                <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: ${probability}%"></div>
-                </div>
-                <span>${probability}%</span>
-            </div>
-        </div>
-      `;
-      
-      // Add description
-      if (description) {
+  function updateRedGeneDisplay(coatResultsDiv, redOffspring) {
+    const maleProbabilities = calculateProbabilities(redOffspring.maleOffspring);
+    const femaleProbabilities = calculateProbabilities(redOffspring.femaleOffspring);
+  
+    // Display results without parent info
+    let redGeneHTML = `
+      <div class="result-item">
+        <h4>Red Gene</h4>
+        <p><strong>Male Offspring:</strong></p>
+    `;
+  
+    // Male offspring results
+    if (Object.keys(maleProbabilities).length > 0) {
+      for (const genotype in maleProbabilities) {
+        const probability = maleProbabilities[genotype].toFixed(1);
+        const description = getVisualTraitDescription('Red', genotype);
+        
         redGeneHTML += `
-          <div class="result-description">
-              <p>${probability}% ${genotype}: ${description}</p>
+          <div class="result-row">
+              <div class="result-genotype">${genotype}</div>
+              <div class="result-probability">
+                  <div class="progress-bar">
+                      <div class="progress-bar-fill" style="width: ${probability}%"></div>
+                  </div>
+                  <span>${probability}%</span>
+              </div>
           </div>
         `;
-      }
-    }
-  } else {
-    redGeneHTML += '<p>No male offspring data available.</p>';
-  }
-
-  // Female offspring results
-  redGeneHTML += `<p><strong>Female Offspring:</strong></p>`;
-  
-  if (Object.keys(femaleProbabilities).length > 0) {
-    for (const genotype in femaleProbabilities) {
-      const probability = femaleProbabilities[genotype].toFixed(1);
-      const description = getVisualTraitDescription('Red', genotype);
-      
-      redGeneHTML += `
-        <div class="result-row">
-            <div class="result-genotype">${genotype}</div>
-            <div class="result-probability">
-                <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: ${probability}%"></div>
-                </div>
-                <span>${probability}%</span>
+        
+        // Add description
+        if (description) {
+          redGeneHTML += `
+            <div class="result-description">
+                <p>${probability}% ${genotype}: ${description}</p>
             </div>
-        </div>
-      `;
-      
-      // Add description
-      if (description) {
+          `;
+        }
+      }
+    } else {
+      redGeneHTML += '<p>No male offspring data available.</p>';
+    }
+  
+    // Female offspring results
+    redGeneHTML += `<p><strong>Female Offspring:</strong></p>`;
+    
+    if (Object.keys(femaleProbabilities).length > 0) {
+      for (const genotype in femaleProbabilities) {
+        const probability = femaleProbabilities[genotype].toFixed(1);
+        const description = getVisualTraitDescription('Red', genotype);
+        
         redGeneHTML += `
-          <div class="result-description">
-              <p>${probability}% ${genotype}: ${description}</p>
+          <div class="result-row">
+              <div class="result-genotype">${genotype}</div>
+              <div class="result-probability">
+                  <div class="progress-bar">
+                      <div class="progress-bar-fill" style="width: ${probability}%"></div>
+                  </div>
+                  <span>${probability}%</span>
+              </div>
           </div>
         `;
+        
+        // Add description
+        if (description) {
+          redGeneHTML += `
+            <div class="result-description">
+                <p>${probability}% ${genotype}: ${description}</p>
+            </div>
+          `;
+        }
       }
+    } else {
+      redGeneHTML += '<p>No female offspring data available.</p>';
     }
-  } else {
-    redGeneHTML += '<p>No female offspring data available.</p>';
-  }
-
-  redGeneHTML += `</div>`;
   
-  return redGeneHTML;
-}
+    redGeneHTML += `</div>`;
+    
+    return redGeneHTML;
+  }
   // Reset simulation data and forms
   function resetSimulation() {
     // Reset data
@@ -2234,42 +2325,7 @@ function updateResultsDisplay() {
     // Call the original function
     originalCalculateResults();
     
-    // Don't call addGenerateKittenButton() again here, it's already called in the original function
-    
-    // Add parent names to the results if provided
-    const maleName = simulationData.parentNames.male;
-    const femaleName = simulationData.parentNames.female;
-    
-    const coatResultsDiv = document.getElementById('coat-results');
-    const healthResultsDiv = document.getElementById('health-results');
-    
-    if (coatResultsDiv && (maleName || femaleName)) {
-      // Check if parent info already exists to prevent duplicates
-      if (!coatResultsDiv.querySelector('.parent-info')) {
-        let parentInfo = '<div class="parent-info">';
-        parentInfo += '<h4>Parents</h4>';
-        
-        if (maleName) {
-          parentInfo += `<p><strong>Male parent:</strong> ${maleName}</p>`;
-        } else {
-          parentInfo += '<p><strong>Male parent:</strong> Unnamed</p>';
-        }
-        
-        if (femaleName) {
-          parentInfo += `<p><strong>Female parent:</strong> ${femaleName}</p>`;
-        } else {
-          parentInfo += '<p><strong>Female parent:</strong> Unnamed</p>';
-        }
-        
-        parentInfo += '</div>';
-        
-        // Insert after the heading
-        const heading = coatResultsDiv.querySelector('h3');
-        if (heading) {
-          heading.insertAdjacentHTML('afterend', parentInfo);
-        }
-      }
-    }
+    // REMOVED: All code that adds parent info to the results section
   };
 }
 
@@ -2393,46 +2449,6 @@ function updateEventListeners() {
 }
 
 // Include parent names in the results section
-function updateResultsDisplay() {
-  const originalCalculateResults = calculateResults;
-  
-  calculateResults = function() {
-    // Call the original function
-    originalCalculateResults();
-    
-    // Add parent names to the results if provided
-    const maleName = simulationData.parentNames.male;
-    const femaleName = simulationData.parentNames.female;
-    
-    const coatResultsDiv = document.getElementById('coat-results');
-    const healthResultsDiv = document.getElementById('health-results');
-    
-    if (coatResultsDiv && (maleName || femaleName)) {
-      let parentInfo = '<div class="parent-info">';
-      parentInfo += '<h4>Parents</h4>';
-      
-      if (maleName) {
-        parentInfo += `<p><strong>Male parent:</strong> ${maleName}</p>`;
-      } else {
-        parentInfo += '<p><strong>Male parent:</strong> Unnamed</p>';
-      }
-      
-      if (femaleName) {
-        parentInfo += `<p><strong>Female parent:</strong> ${femaleName}</p>`;
-      } else {
-        parentInfo += '<p><strong>Female parent:</strong> Unnamed</p>';
-      }
-      
-      parentInfo += '</div>';
-      
-      // Insert after the heading
-      const heading = coatResultsDiv.querySelector('h3');
-      if (heading) {
-        heading.insertAdjacentHTML('afterend', parentInfo);
-      }
-    }
-  };
-}
 
 // Add a name input field to the kitten generation modal
 function enhanceKittenModal() {
@@ -2748,31 +2764,42 @@ function addParentInfo(coatResultsDiv) {
   const maleName = simulationData.parentNames?.male;
   const femaleName = simulationData.parentNames?.female;
   
-  if (coatResultsDiv && (maleName || femaleName)) {
-    // Check if parent info already exists to prevent duplicates
-    if (!coatResultsDiv.querySelector('.parent-info')) {
-      let parentInfo = '<div class="parent-info">';
-      parentInfo += '<h4>Parents</h4>';
-      
-      if (maleName) {
-        parentInfo += `<p><strong>Male parent:</strong> ${maleName}</p>`;
-      } else {
-        parentInfo += '<p><strong>Male parent:</strong> Unnamed</p>';
-      }
-      
-      if (femaleName) {
-        parentInfo += `<p><strong>Female parent:</strong> ${femaleName}</p>`;
-      } else {
-        parentInfo += '<p><strong>Female parent:</strong> Unnamed</p>';
-      }
-      
-      parentInfo += '</div>';
-      
-      // Insert after the heading
-      const heading = coatResultsDiv.querySelector('h3');
-      if (heading) {
-        heading.insertAdjacentHTML('afterend', parentInfo);
-      }
+  if (coatResultsDiv && !coatResultsDiv.querySelector('.parent-info')) {
+    let parentInfo = '<div class="parent-info">';
+    parentInfo += '<h4>Parents</h4>';
+    
+    if (maleName) {
+      parentInfo += `<p><strong>Male parent:</strong> ${maleName}</p>`;
+    } else {
+      parentInfo += '<p><strong>Male parent:</strong> Unnamed</p>';
+    }
+    
+    if (femaleName) {
+      parentInfo += `<p><strong>Female parent:</strong> ${femaleName}</p>`;
+    } else {
+      parentInfo += '<p><strong>Female parent:</strong> Unnamed</p>';
+    }
+    
+    parentInfo += '</div>';
+    
+    // Insert after the heading
+    const heading = coatResultsDiv.querySelector('h3');
+    if (heading) {
+      heading.insertAdjacentHTML('afterend', parentInfo);
     }
   }
 }
+
+function removeParentInfoStyles() {
+  const styleElement = document.createElement('style');
+  styleElement.textContent = `
+    /* Hide any parent-info elements that might still exist */
+    .parent-info {
+      display: none !important;
+    }
+  `;
+  document.head.appendChild(styleElement);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(removeParentInfoStyles, 200);
+});
